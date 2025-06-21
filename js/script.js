@@ -45,6 +45,7 @@ function Generate(id) {
     $('#input-form').valid();
 }
 
+// Custom validatoin for table
 $.validator.addMethod('IsValidSize', function InRange() {
     const minCol = document.getElementById('minCol').value;
     const maxCol = document.getElementById('maxCol').value;
@@ -54,6 +55,7 @@ $.validator.addMethod('IsValidSize', function InRange() {
 }, 'Value would produce a table too large.');
 
 $(function () {
+    // create validation function
     $('#input-form').validate({
         // found online to validate even on first pass
         errorPlacement: function(error, element) {
