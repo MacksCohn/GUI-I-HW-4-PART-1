@@ -1,0 +1,136 @@
+/* Max Cohn */
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.container {
+    font-size: 120%;
+}
+/*
+ * Styling for the input to have cute border and coloring
+ * fixed width and margin are used to calculate size of table
+ * */
+fieldset {
+    border-radius: 2px;
+    border-color: black;
+    border-style: dotted;
+    width: 280px;
+    background-color:beige;
+    padding: 10px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+legend {
+    color:darkolivegreen;
+}
+
+#inputs {
+    border-collapse:separate;
+    border-spacing: 10px;
+}
+
+label {
+    float:left;
+}
+
+
+/*
+ * give the inputs a nice round look with right align
+ * */
+input {
+    text-align:right;
+    float:right;
+    border-radius: 10px;
+    border-width: 1px;
+    padding:2px;
+    padding-right: 10px;
+    width: 20%;
+}
+
+.button {
+    border-radius: 5px;
+    border-width: 1px;
+    padding:2px;
+    width: auto;
+    float:none;
+}
+
+/*
+ * box that holds the results table,
+ * max height uses calc to fill the rest of the page.
+ * overflow auto allows for scrolling
+ * */
+#output {
+    margin: 20px auto;
+    min-height: 20px;
+    max-width: 70%;
+    max-height: calc(100% - 280px - 20px - 10%);
+    overflow:auto;
+}
+
+#results {
+    border: 2px black;
+    border-style:dotted;
+    text-align: center;
+    padding: 2px;
+    margin: auto;
+}
+
+#results > tbody > tr > td {
+    padding:3px;
+}
+
+/*
+ * stlying for the headings
+ * */
+th, #results > tbody > tr > td:first-child{
+    background-color:lightyellow;
+    font-weight: normal;
+    border-style: solid;
+    border-color: #DDDDDD;
+    border-width: 1px 2px 2px 1px;
+}
+
+/*
+ * alternating coloring for the inner columns
+ * */
+#results > tbody > tr:not(:first-child) > td:not(:first-child):nth-child(2n+1) {
+    background-color:lightcoral;
+    border-style: solid;
+    border-width: 0px 2px 2px 0px;
+}
+#results > tbody > tr:not(:first-child) > td:not(:first-child):nth-child(2n) {
+    background-color:lightsalmon;
+    border-style: solid;
+    border-width: 0px 2px 2px 0px;
+}
+
+/*
+ * hover over the inner contents to highlight
+ * with a nice color and styling
+ * */
+#results > tbody > tr:not(:first-child) > td:not(:first-child):hover {
+    background-color:lightgreen;
+    border-width: 2px 0px 0px 2px;
+}
+
+/*
+ * positioning for the table headers to
+ * be over the top. for some reason flipping
+ * the table upside down broke so dont do that
+ */
+.header-top {
+    position:sticky;
+    top:0px;
+}
+.header-side {
+    position:sticky;
+    left:0px;
+}
+/*
+ * error text from validator
+ */
+.error {
+    color:red;
+}
